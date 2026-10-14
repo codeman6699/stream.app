@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* REMOVE background: #4d4d71; from here */
+}
+
+body {
+  background: #4d4d71; /* move background to body instead */
+}
+
+.app-header {
+  display: flex;
+  flex-direction: row;
+  height: 10ch;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin: 1ch;
+  position: sticky; /* optional, helps if you want it fixed on scroll */
+  top: 1ch;
+  z-index: 10;
+}
