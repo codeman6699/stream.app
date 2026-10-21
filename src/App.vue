@@ -28,7 +28,7 @@
           <span>My List</span>
         </router-link>
         <router-link class="routers" to="/login">
-          <Bookmark :size="18" />
+          <LogIn :size="18" />
           <span>Log in</span>
         </router-link>
       </nav>
@@ -449,7 +449,8 @@ import {
   Heart,
   UserPlus,
   Megaphone,
-  Loader2
+  Loader2,
+  LogIn
 } from "lucide-vue-next";
 
 const router = useRouter();
