@@ -72,102 +72,54 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import axios from "axios";
+import { ref, reactive } from "vue";
 
-export default {
-  name: "LoginPage",
 
-  data() {
-    return {
-      showLogin: true,
 
-      form: {
-        name: "",
-        email: "",
-        password: ""
-      }
-    };
-  },
+/* ---------- LOGIN PAGE STATE ---------- */
+const showLogin = ref(true);
+const form = reactive({ name: "", email: "", password: "" });
 
-  methods: {
-    toggleForm() {
-      this.showLogin = !this.showLogin;
-    },
 
-    handleSubmit() {
-      if (this.showLogin) {
-        this.login();
-      } else {
-        this.createAccount();
-      }
-    },
+/* ---------- LOGIN PAGE METHODS ---------- */
+function toggleForm() {
+  showLogin.value = !showLogin.value;
+}
 
-    login() {
-      if (!this.form.email || !this.form.password) {
-        alert("Please enter your email and password.");
-        return;
-      }
+
+
+  axios.post("http://localhost:3000/insert", {
+    name: form.name,
+    email: form.email,
+    password: form.password
+  })
+    .then((res) => {
+      alert(res.data);
+
+      form.name = "";
+      form.email = "";
+      form.password = "";
+
+      showLogin.value = true;
+    })
+    .catch((error) => {
+      console.log("Error:", error);
 
       alert(
-        "Welcome back!" 
+        error.response?.data ||
+        "Error creating account. Please check your server."
       );
-    },
+    });
 
-    createAccount() {
-      if (!this.form.name || !this.form.email || !this.form.password) {
-        alert("Please fill in all fields.");
-        return;
-      }
 
-      axios.post("http://localhost:3000/insert", {
-        name: this.form.name,
-        email: this.form.email,
-        password: this.form.password
-      })
-        .then((res) => {
-          alert(res.data);
 
-          this.form.name = "";
-          this.form.email = "";
-          this.form.password = "";
-
-          this.showLogin = true;
-        })
-        .catch((error) => {
-          console.log("Error:", error);
-
-          alert(
-            error.response?.data ||
-            "Error creating account. Please check your server."
-          );
-        });
-    }
-  }
-};
 </script>
-
 <style scoped>
-:global(*) {
-  box-sizing: border-box;
-}
-
-:global(html),
-:global(body),
-:global(#app) {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-:global(html),
-:global(body) {
-  overflow-x: hidden;
-}
 
 .login {
-  position: fixed;
+  
   inset: 0;
   width: 100%;
   height: 100vh;
@@ -187,6 +139,7 @@ export default {
   background-repeat: no-repeat;
 
   box-sizing: border-box;
+  border-radius: 12px;
 }
 
 .login-card {
