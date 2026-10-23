@@ -455,6 +455,7 @@ const trendingMovies = [
     type: "Movie",
     episodes: null,
   },
+  
 ];
 
 /* ---------- LATEST MOVIES ---------- */
