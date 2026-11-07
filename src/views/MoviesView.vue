@@ -540,8 +540,7 @@ function toggleDropdown(name) {
 }
 
 function watchCard(card) {
-  console.log(`Watching: ${card.title}`);
-  router.push("/watch/3");
+  router.push(`/watch/${card.id}`);
 }
 
 /* Reset to page 1 when filters change */
