@@ -104,6 +104,7 @@ const recent = computed(() => [...allContent.value].slice(0, 5));
 .page-head {
   display: flex; align-items: center; justify-content: space-between;
   gap: 16px; flex-wrap: wrap;
+  
 }
 .page-head h1 { color: #fff; font-size: 26px; font-weight: 800; }
 .page-head p { color: #94a3b8; font-size: 13px; margin-top: 4px; }

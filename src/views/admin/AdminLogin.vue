@@ -39,11 +39,8 @@
         </button>
       </form>
 
-      <div class="hint">
-        <Info :size="14" />
-        <span>Demo: <code>admin</code> / <code>admin123</code></span>
-      </div>
-      <a href="/home" class="back-link"><ArrowLeft :size="14" /> Back to site</a>
+
+
     </div>
   </div>
 </template>
@@ -53,7 +50,7 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import {
   Clapperboard, UserRound, Lock, Eye, EyeOff, LogIn,
-  Loader2, AlertCircle, Info, ArrowLeft,
+  Loader2, AlertCircle,  
 } from "lucide-vue-next";
 import { useAuthStore } from "@/stores/authStore.js";
 

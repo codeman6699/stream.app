@@ -1,111 +1,171 @@
-import lastWarriorImg from "@/assets/5eDgJqnnmYVvE8T72rDST4u0VCq.webp";
-import shadowDragonImg from "@/assets/9cWoy2uxaUYtlFLiC11YRC0bPex.webp";
-import midnightRevengeImg from "@/assets/ccY2f1o9M8OjFpQb0SVZTuokkYQ.webp";
-import scorpionKingImg from "@/assets/oFEHcmPuI95aoeNrWXCVnA4oI5Y.webp";
-import ironFistImg from "@/assets/osZ6HJJBPwptZLTXFYbGQ0Jc7WB.webp";
-import raudseRusikagaImg from "@/assets/p9x1aME4mFJTeqhKEAYcUCVuzqC.webp";
-import extraImg from "@/assets/nGU2cNmKfNk5MNgp7SmlCELvJMo.webp";
+// src/data/content.js
+// Each movie / episode points to its OWN file on isatafilez.my.
+// These must match the URLs in stream.js CATALOG.
 
-const DEMO_MP4   = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-const DEMO_MP4_2 = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
-const DEMO_MP4_3 = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4";
-
+/* ---------------- MOVIES ---------------- */
 export const movies = [
-  { id:1,  title:"The Last Warrior",     info:"Fantasy • 2021 • Disney Adventure",    image:lastWarriorImg,     rating:7.8, quality:"HD", year:2021, type:"Movie", genre:"Fantasy",  released:"2021-03-12", videoUrl:DEMO_MP4,   parts:null, downloadBase:"https://example.com/downloads/the-last-warrior" },
-  { id:2,  title:"Shadow of the Dragon", info:"Action • 1992 • Crime Thriller",      image:shadowDragonImg,    rating:7.2, quality:"HD", year:1992, type:"Movie", genre:"Action",   released:"1992-08-21", videoUrl:DEMO_MP4_2, parts:null, downloadBase:"https://example.com/downloads/shadow-of-the-dragon" },
-  { id:3,  title:"Midnight Revenge",     info:"Action • 1986 • Hong Kong Crime",     image:midnightRevengeImg, rating:6.9, quality:"HD", year:1986, type:"Movie", genre:"Action",   released:"1986-05-10", videoUrl:DEMO_MP4_3, parts:null, downloadBase:"https://example.com/downloads/midnight-revenge" },
-  { id:4,  title:"Rise of the Warrior",  info:"Action • 2008 • The Scorpion King 2", image:scorpionKingImg,    rating:5.8, quality:"HD", year:2008, type:"Movie", genre:"Action",   released:"2008-08-19", videoUrl:DEMO_MP4,   parts:null, downloadBase:"https://example.com/downloads/rise-of-the-warrior" },
-  { id:5,  title:"Iron Fist Legacy",     info:"Martial Arts • 2026 • Perfect",       image:ironFistImg,        rating:8.4, quality:"4K", year:2026, type:"Movie", genre:"Action",   released:"2026-01-15", videoUrl:DEMO_MP4,
-    parts:[
-      { part:1, title:"The Beginning",   duration:"1h 22m", quality:"4K", videoUrl:DEMO_MP4   },
-      { part:2, title:"The Return",      duration:"1h 15m", quality:"4K", videoUrl:DEMO_MP4_2 },
-      { part:3, title:"The Final Fight", duration:"1h 30m", quality:"4K", videoUrl:DEMO_MP4_3 },
-    ],
-    downloadBase:"https://example.com/downloads/iron-fist-legacy" },
-  { id:6,  title:"Raudse Rusikaga",      info:"Drama • 2026 • Estonian Horror",      image:raudseRusikagaImg,  rating:7.5, quality:"HD", year:2026, type:"Movie", genre:"Horror",   released:"2026-02-01", videoUrl:DEMO_MP4_2, parts:null, downloadBase:"https://example.com/downloads/raudse-rusikaga" },
-  { id:7,  title:"Bloodline Hunter",     info:"Action • 2026 • Perfect",             image:lastWarriorImg,     rating:8.1, quality:"4K", year:2026, type:"Movie", genre:"Action",   released:"2026-03-20", videoUrl:DEMO_MP4_3, parts:null, downloadBase:"https://example.com/downloads/bloodline-hunter" },
-  { id:8,  title:"Crimson Horizon",      info:"Sci-Fi • 2025 • Kevin",               image:shadowDragonImg,    rating:7.9, quality:"HD", year:2025, type:"Movie", genre:"Sci-Fi",   released:"2025-11-05", videoUrl:DEMO_MP4,   parts:null, downloadBase:"https://example.com/downloads/crimson-horizon" },
-  { id:9,  title:"Wrath of the King",    info:"Historical • 2024 • Chris",           image:extraImg,           rating:7.3, quality:"HD", year:2024, type:"Movie", genre:"Drama",    released:"2024-09-18", videoUrl:DEMO_MP4_2, parts:null, downloadBase:"https://example.com/downloads/wrath-of-the-king" },
-  { id:10, title:"VisionQuest",          info:"Sci-Fi • 2026 • Marvel Television",    image:midnightRevengeImg, rating:8.6, quality:"4K", year:2026, type:"Movie", genre:"Sci-Fi",   released:"2026-04-02", videoUrl:DEMO_MP4_3, parts:null, downloadBase:"https://example.com/downloads/visionquest" },
+  {
+    id: 1, tmdbId: 454626, posterPath: "/IfB9hy4JH1eH6HEfIgIGORXi5h.jpg",
+    title: "The Last Warrior", info: "Fantasy • 2021 • Disney Adventure",
+    rating: 7.8, quality: "HD", year: 2021, type: "Movie", genre: "Fantasy", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2021/fantasy/LAST_WARRIOR_HD.mp4",
+  },
+  {
+    id: 2, tmdbId: 934433, posterPath: "/wDWwtvkRRlgTiUr6TyLSMX8FCuZ.jpg",
+    title: "Shadow of the Dragon", info: "Action • 1992 • Crime Thriller",
+    rating: 7.2, quality: "HD", year: 1992, type: "Movie", genre: "Action", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/1992/action/SHADOW_DRAGON_HD.mp4",
+  },
+  {
+    id: 3, tmdbId: 899294, posterPath: "/q9q0Zq3tYqZ2s9qM8yHtV9oI3nX.jpg",
+    title: "Midnight Revenge", info: "Action • 1986 • Hong Kong Crime",
+    rating: 6.9, quality: "HD", year: 1986, type: "Movie", genre: "Action", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/1986/action/MIDNIGHT_REVENGE_HD.mp4",
+  },
+  {
+    id: 4, tmdbId: 15659, posterPath: "/3lQqJhqltzBB0oEnHhFsqjO2a6R.jpg",
+    title: "Rise of the Warrior", info: "Action • 2008 • Scorpion King 2",
+    rating: 5.8, quality: "HD", year: 2008, type: "Movie", genre: "Action", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2008/action/RISE_WARRIOR_HD.mp4",
+  },
+  {
+    id: 5, tmdbId: 619930, posterPath: "/9Z8jJ4mz4oXlI4wnNeQ4x4Yq6h0.jpg",
+    title: "Iron Fist Legacy", info: "Martial Arts • 2026 • Perfect",
+    rating: 8.4, quality: "4K", year: 2026, type: "Movie", genre: "Action", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2026/action/IRON_FIST_LEGACY_4K.mp4",
+  },
+  {
+    id: 6, tmdbId: 758323, posterPath: "/aX7dQ9OaJkqr7whYO5HnWb6rT9h.jpg",
+    title: "Raudse Rusikaga", info: "Drama • 2026 • Estonian Horror",
+    rating: 7.5, quality: "HD", year: 2026, type: "Movie", genre: "Horror", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2026/horror/RAUDSE_RUSIKAGA_HD.mp4",
+  },
+  {
+    id: 7, tmdbId: 324544, posterPath: "/6ELTqZLaZUKVU5s8M4q4u5xZ5w8.jpg",
+    title: "Bloodline Hunter", info: "Action • 2026 • Perfect",
+    rating: 8.1, quality: "4K", year: 2026, type: "Movie", genre: "Action", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2026/action/BLOODLINE_HUNTER_4K.mp4",
+  },
+  {
+    id: 8, tmdbId: 823464, posterPath: "/5FjR8RJK3RrgvcxZ1Qvx5bLN2d3.jpg",
+    title: "Crimson Horizon", info: "Sci-Fi • 2025 • Kevin",
+    rating: 7.9, quality: "HD", year: 2025, type: "Movie", genre: "Sci-Fi", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2025/scifi/CRIMSON_HORIZON_HD.mp4",
+  },
+  {
+    id: 9, tmdbId: 1029575, posterPath: "/3Q6b9z6bK5Yq7XwFv9oZ7x0m2s5d.jpg",
+    title: "Wrath of the King", info: "Historical • 2024 • Chris",
+    rating: 7.3, quality: "HD", year: 2024, type: "Movie", genre: "Drama", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2024/drama/WRATH_OF_THE_KING_HD.mp4",
+  },
+  {
+    id: 10, tmdbId: 609681, posterPath: "/g8aO2a5xG7q5q9aMx8x4jZJ6rRj7.jpg",
+    title: "VisionQuest", info: "Sci-Fi • 2026 • Marvel TV",
+    rating: 8.6, quality: "4K", year: 2026, type: "Movie", genre: "Sci-Fi", episodes: null,
+    sourceUrl: "http://isatafilez.my/files/movies/2026/scifi/VISIONQUEST_4K.mp4",
+  },
 ];
 
+/* ---------------- SERIES ---------------- */
+// Each episode has its own sourceUrl. Must match stream.js.
+
 export const series = [
-  { id:11, title:"Dark Horizon",     info:"Thriller • 2026 • Season 1",  image:scorpionKingImg,   rating:8.0, quality:"HD", year:2026, type:"Series", genre:"Thriller", released:"2026-01-10", downloadBase:"https://example.com/downloads/dark-horizon",
-    seasons:[{ season:1, episodes:[
-      { ep:1, title:"Pilot",         duration:"45m", videoUrl:DEMO_MP4   },
-      { ep:2, title:"First Contact", duration:"42m", videoUrl:DEMO_MP4_2 },
-      { ep:3, title:"The Signal",    duration:"44m", videoUrl:DEMO_MP4_3 },
-      { ep:4, title:"Into the Dark", duration:"48m", videoUrl:DEMO_MP4   },
-      { ep:5, title:"Revelations",   duration:"46m", videoUrl:DEMO_MP4_2 },
-      { ep:6, title:"Turning Point", duration:"43m", videoUrl:DEMO_MP4_3 },
-      { ep:7, title:"The Hunt",      duration:"47m", videoUrl:DEMO_MP4   },
-      { ep:8, title:"Season Finale", duration:"52m", videoUrl:DEMO_MP4_2 },
-    ]}]},
-  { id:12, title:"The Silent Order", info:"Mystery • 2025 • Season 2",   image:ironFistImg,       rating:7.7, quality:"HD", year:2025, type:"Series", genre:"Mystery",  released:"2025-06-14", downloadBase:"https://example.com/downloads/the-silent-order",
-    seasons:[
-      { season:1, episodes:[
-        { ep:1, title:"The Oath",   duration:"44m", videoUrl:DEMO_MP4   },
-        { ep:2, title:"Whispers",   duration:"41m", videoUrl:DEMO_MP4_2 },
-        { ep:3, title:"The Ledger", duration:"45m", videoUrl:DEMO_MP4_3 },
-        { ep:4, title:"Silence",    duration:"43m", videoUrl:DEMO_MP4   },
-        { ep:5, title:"The Ritual", duration:"48m", videoUrl:DEMO_MP4_2 },
-        { ep:6, title:"Reckoning",  duration:"50m", videoUrl:DEMO_MP4_3 },
-      ]},
-      { season:2, episodes:[
-        { ep:1, title:"Rebirth",    duration:"46m", videoUrl:DEMO_MP4   },
-        { ep:2, title:"The Return", duration:"44m", videoUrl:DEMO_MP4_2 },
-        { ep:3, title:"Trust Fall", duration:"42m", videoUrl:DEMO_MP4_3 },
-        { ep:4, title:"The Break",  duration:"47m", videoUrl:DEMO_MP4   },
-        { ep:5, title:"Crossroads", duration:"45m", videoUrl:DEMO_MP4_2 },
-        { ep:6, title:"Final Oath", duration:"53m", videoUrl:DEMO_MP4_3 },
-      ]},
-    ]},
-  { id:13, title:"Echoes of War",    info:"Drama • 2026 • Season 1",     image:raudseRusikagaImg, rating:8.2, quality:"4K", year:2026, type:"Series", genre:"Drama",    released:"2026-02-20", downloadBase:"https://example.com/downloads/echoes-of-war",
-    seasons:[{ season:1, episodes:[
-      { ep:1, title:"Enlistment", duration:"50m", videoUrl:DEMO_MP4   },
-      { ep:2, title:"The Front",  duration:"48m", videoUrl:DEMO_MP4_2 },
-      { ep:3, title:"Brothers",   duration:"52m", videoUrl:DEMO_MP4_3 },
-      { ep:4, title:"Loss",       duration:"49m", videoUrl:DEMO_MP4   },
-      { ep:5, title:"The Return", duration:"51m", videoUrl:DEMO_MP4_2 },
-      { ep:6, title:"Homecoming", duration:"58m", videoUrl:DEMO_MP4_3 },
-    ]}]},
-  { id:14, title:"Neon Streets",     info:"Cyberpunk • 2025 • Season 3", image:shadowDragonImg,   rating:7.4, quality:"HD", year:2025, type:"Series", genre:"Cyberpunk",released:"2025-09-03", downloadBase:"https://example.com/downloads/neon-streets",
-    seasons:[
-      { season:1, episodes:[
-        { ep:1, title:"Jack In",   duration:"40m", videoUrl:DEMO_MP4   },
-        { ep:2, title:"Neon Rain", duration:"42m", videoUrl:DEMO_MP4_2 },
-        { ep:3, title:"Blackout",  duration:"41m", videoUrl:DEMO_MP4_3 },
-      ]},
-      { season:2, episodes:[
-        { ep:1, title:"Reconnect",  duration:"43m", videoUrl:DEMO_MP4   },
-        { ep:2, title:"Ghost Code", duration:"44m", videoUrl:DEMO_MP4_2 },
-        { ep:3, title:"Overdrive",  duration:"45m", videoUrl:DEMO_MP4_3 },
-      ]},
-      { season:3, episodes:[
-        { ep:1, title:"New Dawn",     duration:"46m", videoUrl:DEMO_MP4   },
-        { ep:2, title:"The Grid",     duration:"44m", videoUrl:DEMO_MP4_2 },
-        { ep:3, title:"Singularity",  duration:"48m", videoUrl:DEMO_MP4_3 },
-        { ep:4, title:"Final Upload", duration:"55m", videoUrl:DEMO_MP4   },
-      ]},
-    ]},
-  { id:15, title:"Kingdom Come",     info:"Fantasy • 2026 • Season 1",   image:lastWarriorImg,    rating:8.5, quality:"4K", year:2026, type:"Series", genre:"Fantasy",  released:"2026-05-01", downloadBase:"https://example.com/downloads/kingdom-come",
-    seasons:[{ season:1, episodes:[
-      { ep:1, title:"The Crown",     duration:"52m", videoUrl:DEMO_MP4   },
-      { ep:2, title:"Rise of Kings", duration:"48m", videoUrl:DEMO_MP4_2 },
-      { ep:3, title:"The Siege",     duration:"50m", videoUrl:DEMO_MP4_3 },
-      { ep:4, title:"Betrayal",      duration:"47m", videoUrl:DEMO_MP4   },
-      { ep:5, title:"The Alliance",  duration:"49m", videoUrl:DEMO_MP4_2 },
-      { ep:6, title:"War Council",   duration:"51m", videoUrl:DEMO_MP4_3 },
-      { ep:7, title:"The Battle",    duration:"56m", videoUrl:DEMO_MP4   },
-      { ep:8, title:"Coronation",    duration:"60m", videoUrl:DEMO_MP4_2 },
-      { ep:9, title:"Kingdom Come",  duration:"65m", videoUrl:DEMO_MP4_3 },
-    ]}]},
+  {
+    id: 11, tmdbId: 1399, posterPath: "/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg",
+    title: "Dark Horizon", info: "Thriller • 2026 • Season 1",
+    rating: 8.0, quality: "HD", year: 2026, type: "Series", genre: "Thriller",
+    episodes: 8,
+    seasons: [{
+      season: 1,
+      episodes: [
+        { ep: 1, title: "Pilot",      duration: "45m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E01.mp4" },
+        { ep: 2, title: "The Signal", duration: "44m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E02.mp4" },
+        { ep: 3, title: "Crossfire",  duration: "46m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E03.mp4" },
+        { ep: 4, title: "Blackout",   duration: "43m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E04.mp4" },
+        { ep: 5, title: "The Deal",   duration: "45m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E05.mp4" },
+        { ep: 6, title: "Red Code",   duration: "47m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E06.mp4" },
+        { ep: 7, title: "Collateral", duration: "44m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E07.mp4" },
+        { ep: 8, title: "Final Hour", duration: "50m", sourceUrl: "http://isatafilez.my/files/series/2026/darkhorizon/S01E08.mp4" },
+      ],
+    }],
+  },
+  {
+    id: 12, tmdbId: 456, posterPath: "/g9lJY5vG4kU9p3W9JkGz9yC9uJk7.jpg",
+    title: "The Silent Order", info: "Mystery • 2025 • Season 2",
+    rating: 7.7, quality: "HD", year: 2025, type: "Series", genre: "Mystery",
+    episodes: 12,
+    seasons: [{
+      season: 2,
+      episodes: Array.from({ length: 12 }, (_, i) => {
+        const n = i + 1;
+        return {
+          ep: n,
+          title: `Chapter ${n}`,
+          duration: "42m",
+          sourceUrl: `http://isatafilez.my/files/series/2025/silentorder/S02E${String(n).padStart(2, "0")}.mp4`,
+        };
+      }),
+    }],
+  },
+  {
+    id: 13, tmdbId: 84958, posterPath: "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    title: "Echoes of War", info: "Drama • 2026 • Season 1",
+    rating: 8.2, quality: "4K", year: 2026, type: "Series", genre: "Drama",
+    episodes: 6,
+    seasons: [{
+      season: 1,
+      episodes: Array.from({ length: 6 }, (_, i) => {
+        const n = i + 1;
+        return {
+          ep: n,
+          title: `Part ${n}`,
+          duration: "55m",
+          sourceUrl: `http://isatafilez.my/files/series/2026/echoesofwar/S01E${String(n).padStart(2, "0")}_4K.mp4`,
+        };
+      }),
+    }],
+  },
+  {
+    id: 14, tmdbId: 67744, posterPath: "/2OMB0ynKlyIenMJWI2Dy9IWT4c.jpg",
+    title: "Neon Streets", info: "Cyberpunk • 2025 • Season 3",
+    rating: 7.4, quality: "HD", year: 2025, type: "Series", genre: "Sci-Fi",
+    episodes: 10,
+    seasons: [{
+      season: 3,
+      episodes: Array.from({ length: 10 }, (_, i) => {
+        const n = i + 1;
+        return {
+          ep: n,
+          title: `Night ${n}`,
+          duration: "48m",
+          sourceUrl: `http://isatafilez.my/files/series/2025/neonstreets/S03E${String(n).padStart(2, "0")}.mp4`,
+        };
+      }),
+    }],
+  },
+  {
+    id: 15, tmdbId: 94997, posterPath: "/1YV3kI2Rwpdi6z0Vj5KY5I2x0nR.jpg",
+    title: "Kingdom Come", info: "Fantasy • 2026 • Season 1",
+    rating: 8.5, quality: "4K", year: 2026, type: "Series", genre: "Fantasy",
+    episodes: 9,
+    seasons: [{
+      season: 1,
+      episodes: Array.from({ length: 9 }, (_, i) => {
+        const n = i + 1;
+        return {
+          ep: n,
+          title: `Reign ${n}`,
+          duration: "52m",
+          sourceUrl: `http://isatafilez.my/files/series/2026/kingdomcome/S01E${String(n).padStart(2, "0")}_4K.mp4`,
+        };
+      }),
+    }],
+  },
 ];
 
 export const allContent = [...movies, ...series];
-export const findById = (id) => allContent.find((c) => c.id === Number(id)) || null;
-export const findEpisode = (seriesItem, seasonNum, epNum) => {
-  if (!seriesItem?.seasons) return null;
-  const s = seriesItem.seasons.find((x) => x.season === seasonNum);
-  return s?.episodes.find((e) => e.ep === epNum) || null;
-};
+
+export function findById(id) {
+  const n = Number(id);
+  return allContent.find((c) => c.id === n) || null;
+}

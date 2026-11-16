@@ -18,10 +18,10 @@ const routes = [
   { path: "/terms", component: () => import("@/views/TermsView.vue") },
   { path: "/disclaimer", component: () => import("@/views/DisclaimerView.vue") },
   { path: "/howwork", component: () => import("@/views/HowWork.vue") },
-  { path: "/profile", component: () => import("@/views/ProfileSettings.vue") },
+//  { path: "/profile", component: () => import("@/views/ProfileSettings.vue") },
   { path: "/settings", component: () => import("@/views/AppSettings.vue") },
   { path: "/download", name: "GetApp", component: () => import("@/views/GetApp.vue") },
-  { path: "/login", component: () => import("@/views/LoginView.vue") },
+ // { path: "/login", component: () => import("@/views/LoginView.vue") },
   { path: "/notifications", component: () => import("@/views/NotificationsView.vue") },
   {
     path: "/admin/login",

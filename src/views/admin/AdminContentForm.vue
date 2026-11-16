@@ -450,6 +450,7 @@ function showToast(msg) {
   color: #94a3b8;
   font-size: 12.5px;
   margin-top: 3px;
+  margin-left: 30ch;
 }
 .back-link {
   display: inline-flex;

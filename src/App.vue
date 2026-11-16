@@ -1,9 +1,8 @@
-
 <template>
   <div class="page">
     <header v-if="!hideChrome" class="app-header">
       <div class="logo">
-        <Clapperboard :size="27" :stroke-width="2.2" />
+        <img style="font-size: 12px; width: 5ch; height: 5ch; border-radius: 100%;" src="../src/assets/stream.png">
         <router-link to="/">Stream.store</router-link>
       </div>
 
@@ -12,7 +11,6 @@
         <router-link class="routers" to="/movies"><Clapperboard :size="18" /><span>Movies</span></router-link>
         <router-link class="routers" to="/series"><Tv :size="18" /><span>Series</span></router-link>
         <router-link class="routers" to="/mylist"><Bookmark :size="18" /><span>My List</span></router-link>
-        <router-link class="routers" to="/login"><LogIn :size="18" /><span>Log in</span></router-link>
       </nav>
 
       <div class="uses">
@@ -38,25 +36,23 @@
             @click.stop="show = !show"
             aria-label="Open user menu"
           >
-            <UserRound :size="21" />
+            <Settings :size="21" />
             <span class="user-status-dot" aria-hidden="true"></span>
           </button>
           <Transition name="dropdown">
             <div v-if="show" class="user-menu" @click.stop>
               <div class="user-menu-header">
-                <div class="user-avatar"><UserRound :size="20" /></div>
+                <div class="user-avatar"><Settings :size="20" /></div>
                 <div class="user-meta">
-                  <p class="user-name">Guest User</p>
-                  <p class="user-email">guest@stream.store</p>
+                  <p class="user-name">Settings</p>
+                  <p class="user-email">Settings Panel</p>
                 </div>
               </div>
               <div class="menu-divider"></div>
-              <button class="menu-item" @click="goTo('/profile')"><UserRoundCog :size="17" /><span>Profile Settings</span></button>
               <button class="menu-item" @click="goTo('/settings')"><Settings :size="17" /><span>App Settings</span></button>
-              <button class="menu-item" @click="goTo('/admin')"><ShieldCheck :size="17" /><span>Admin Panel</span></button>
-              <button class="menu-item" @click="goTo('/mylist')"><Bookmark :size="17" /><span>My List</span></button>
+              <button class="menu-item" @click="goToAdmin"><ShieldCheck :size="17" /><span>Admin Panel</span></button>
               <div class="menu-divider"></div>
-              <button class="menu-item logout" @click="goTo('/login')"><LogOut :size="17" /><span>Logout</span></button>
+              <p style="text-align: center; color: #94a3b8; font-size: 11px;">settings panel</p>
             </div>
           </Transition>
         </div>
@@ -64,36 +60,7 @@
     </header>
 
     <main class="main-content" :class="{ 'no-chrome': hideChrome }">
-      <div v-if="!hideChrome" class="categories-bar">
-        <button class="categories-btn" @click.stop="showCategories = !showCategories">
-          <LayoutGrid :size="18" /><span>Categories</span>
-          <ChevronDown :size="16" class="chev" :class="{ open: showCategories }" />
-        </button>
-        <Transition name="dropdown">
-          <div v-if="showCategories" class="categories-menu" @click.stop>
-            <div class="cat-group">
-              <p class="cat-title">Genres</p>
-              <button v-for="g in genres" :key="g" class="cat-item" @click="pickCategory('genre', g)">
-                <Tag :size="14" /><span>{{ g }}</span>
-              </button>
-            </div>
-            <div class="menu-divider"></div>
-            <div class="cat-group">
-              <p class="cat-title">Type</p>
-              <button class="cat-item" @click="pickCategory('type', 'Movie')"><Clapperboard :size="14" /><span>Movies</span></button>
-              <button class="cat-item" @click="pickCategory('type', 'Series')"><Tv :size="14" /><span>Series</span></button>
-            </div>
-            <div class="menu-divider"></div>
-            <div class="cat-group">
-              <p class="cat-title">Quality</p>
-              <button class="cat-item" @click="pickCategory('quality', '4K')"><Sparkles :size="14" /><span>4K Ultra HD</span></button>
-              <button class="cat-item" @click="pickCategory('quality', 'HD')"><MonitorPlay :size="14" /><span>HD</span></button>
-            </div>
-          </div>
-        </Transition>
-      </div>
-
-      <router-view v-slot="{ Component }">
+           <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
         </transition>
@@ -105,7 +72,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <router-link to="/" class="footer-logo">
-              <Clapperboard :size="24" :stroke-width="2.2" />
+              <img style="font-size: 12px; width: 5ch; height: 5ch; border-radius: 100%;" src="../src/assets/stream.png">
               <span>Stream<span class="dot">.</span>Store</span>
             </router-link>
             <p class="footer-tagline">Enjoy your favorite Agasobanuye films and series online for free!</p>
@@ -139,7 +106,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© {{ new Date().getFullYear() }} <span class="highlight">Stream.Store</span>. All rights reserved.</p>
+          <p>&copy; {{ new Date().getFullYear() }} <span class="highlight">Stream.Store with kennedy dev(codeman)</span>. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -150,10 +117,10 @@
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import {
-  House, Clapperboard, Tv, Bookmark, Search, Download, UserRound, UserRoundCog,
-  Settings, LogOut, LayoutGrid, ChevronDown, Tag, Sparkles, MonitorPlay,
+  House, Clapperboard, Tv, Bookmark, Search, Download, 
+  Settings,
   MessageCircle, Instagram, Youtube, Send, Building2, Mail, Shield, FileText,
-  Info, Compass, Share2, LogIn, ShieldCheck,
+  Info, Compass, Share2, ShieldCheck,
 } from "lucide-vue-next";
 
 const router = useRouter();
@@ -169,7 +136,6 @@ const searchQuery = ref("");
 const searchInput = ref(null);
 const userBtn = ref(null);
 
-const genres = ["Action","Fantasy","Sci-Fi","Drama","Thriller","Mystery","Horror","Cyberpunk"];
 
 function submitSearch() {
   const q = searchQuery.value.trim();
@@ -178,10 +144,18 @@ function submitSearch() {
   searchQuery.value = "";
 }
 
-function pickCategory(kind, value) {
-  showCategories.value = false;
-  router.push({ path: "/browse", query: { [kind]: value } });
+/**
+ * Admin Panel button.
+ * Just navigate to /admin — the router guard (requiresAdmin) will
+ * redirect to /admin/login automatically when the user is not authenticated,
+ * and will allow access when they are.
+ */
+function goToAdmin() {
+  show.value = false;
+  router.push("/admin");
 }
+
+
 
 function goTo(path) {
   show.value = false;
@@ -207,6 +181,7 @@ onMounted(() => {
   document.addEventListener("click", handleClickOutside);
   document.addEventListener("keydown", handleKeydown);
 });
+
 onBeforeUnmount(() => {
   document.removeEventListener("click", handleClickOutside);
   document.removeEventListener("keydown", handleKeydown);
@@ -234,11 +209,11 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 .app-header {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  width: calc(100% - 40px); min-height: 76px;
-  margin: 5px 20px 0; padding: 14px 24px;
+  width: calc(100% - 0px); min-height: 76px;
+  margin-left: 0 ; padding: 14px 24px;
   background: rgba(20, 27, 55, 0.72);
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 0 0 12px 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   position: fixed; z-index: 100;
 }
@@ -346,25 +321,7 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   width: 100% !important; max-width: none !important; min-height: 100vh;
 }
 
-.categories-bar { display: flex; justify-content: flex-end; margin-bottom: 26px; position: relative; }
-.categories-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 11px 16px; color: #fff; font-size: 13px; font-weight: 650;
-  background: linear-gradient(135deg, #6366f1, #7c3aed);
-  border: 1px solid rgba(167, 139, 250, 0.45); border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
-  transition: all 0.25s ease;
-}
-.categories-btn:hover { transform: translateY(-2px); }
-.categories-btn .chev { transition: transform 0.25s ease; }
-.categories-btn .chev.open { transform: rotate(180deg); }
-.categories-menu {
-  position: absolute; top: calc(100% + 10px); right: 0;
-  width: 260px; padding: 10px;
-  background: rgba(15, 23, 42, 0.97); backdrop-filter: blur(24px);
-  border: 1px solid rgba(129, 140, 248, 0.28); border-radius: 15px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); z-index: 50;
-}
+
 .cat-title {
   padding: 6px 8px 4px; color: #94a3b8; font-size: 10px; font-weight: 750;
   letter-spacing: 1.2px; text-transform: uppercase;

@@ -129,7 +129,7 @@ onMounted(() => {
   backdrop-filter: blur(20px);
   border-right: 1px solid rgba(148, 163, 184, 0.2);
   transition: width 0.25s ease;
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 100vh;
 }
@@ -216,6 +216,7 @@ onMounted(() => {
   border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: 9px;
   transition: all 0.2s ease;
+  position: relative;
 }
 .collapse-btn:hover {
   color: #fff;
@@ -226,6 +227,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  margin-left: 29ch;
 }
 .admin-topbar {
   position: sticky;

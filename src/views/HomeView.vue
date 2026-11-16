@@ -70,9 +70,7 @@
           <span class="heading-line"></span>
           Browse by Category
         </h2>
-        <router-link to="/browse" class="view-all">
-          View All <ChevronRight :size="16" />
-        </router-link>
+     
       </div>
 
       <div class="category-grid">
