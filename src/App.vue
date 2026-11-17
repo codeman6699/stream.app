@@ -1,5 +1,11 @@
 <template>
   <div class="page">
+    <Transition name="splash">
+      <SplashIntro
+        v-if="showSplash"
+        @finish="showSplash = false"
+      />
+    </Transition>
     <header v-if="!hideChrome" class="app-header">
       <div class="logo">
         <img style="font-size: 12px; width: 5ch; height: 5ch; border-radius: 100%;" src="../src/assets/stream.png">
@@ -116,6 +122,7 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import SplashIntro from "./components/SplashIntro.vue";
 import {
   House, Clapperboard, Tv, Bookmark, Search, Download, 
   Settings,
@@ -125,6 +132,9 @@ import {
 
 const router = useRouter();
 const route = useRoute();
+
+// Show the full-screen brand intro once when the app is first loaded.
+const showSplash = ref(true);
 
 const hideChrome = computed(() =>
   route.path.startsWith("/admin") || route.path.startsWith("/embed")
@@ -400,5 +410,22 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .uses { width: 100%; justify-content: center; flex-wrap: wrap; }
   .footer-grid { grid-template-columns: 1fr; }
   .main-content { width: calc(100% - 28px); padding-top: 24px; }
+}
+/* Full-screen Stream.store intro transition */
+.splash-enter-active,
+.splash-leave-active {
+  transition: opacity 650ms ease;
+}
+
+.splash-enter-from,
+.splash-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-enter-active,
+  .splash-leave-active {
+    transition-duration: 0.01ms;
+  }
 }
 </style>
