@@ -1,4 +1,3 @@
-
 <template>
   <section class="form-page">
 
@@ -291,24 +290,24 @@ async function saveContent() {
 
   try {
     const payload = {
-      ...form,
-      imageUrl: form.poster,
+      title: form.title,
+      type: form.type,
+      year: form.year,
+      genre: form.genre,
+      quality: form.quality,
+      released: form.released || "",
+      rating: form.rating,
       info: form.description,
-      episodes: form.episodes.map((episode) => ({
-        season: episode.season,
-        ep: episode.ep,
-        title: episode.title,
-        description: episode.description,
-        duration: episode.duration,
-        videoUrl: episode.videoUrl,
-        videoFile: episode.videoFile,
-      })),
+      description: form.description,
+      downloadBase: form.downloadBase,
+      poster: form.poster,
+      posterFile: form.posterFile,
+      videoUrl: form.videoUrl,
+      videoFile: form.videoFile,
     };
+
     if (isEditing.value) {
-      await updateAdminContent(
-        route.params.id,
-        payload
-      );
+      await updateAdminContent(route.params.id, payload);
     } else {
       await addAdminContent(payload);
     }
@@ -316,7 +315,10 @@ async function saveContent() {
     router.push({ name: "AdminContent" });
   } catch (err) {
     console.error("Content save failed:", err);
-    error.value = err.response?.data?.error || "Unable to save content. Please try again.";
+    error.value =
+      err.response?.data?.error ||
+      err.message ||
+      "Unable to save content. Please try again.";
   } finally {
     saving.value = false;
   }
