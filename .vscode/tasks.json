@@ -1,0 +1,805 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Stream.Store Frontend",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"build"
+			],
+			"problemMatcher": [
+				"$eslint - stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Check Backend Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"backend/server.js"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Backend API Smoke Test",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const http=require('http');const child=require('child_process').spawn(process.execPath,['backend/server.js'],{cwd:process.cwd(),stdio:'ignore'});setTimeout(()=>{http.get('http://127.0.0.1:5000/api/health',r=>{console.log('health status',r.statusCode);http.get('http://127.0.0.1:5000/api/content',x=>{console.log('public content status',x.statusCode);http.request({host:'127.0.0.1',port:5000,path:'/api/content',method:'POST'},y=>{console.log('unauthenticated write status',y.statusCode);child.kill();}).end();});}).on('error',e=>{console.error(e.message);child.kill();process.exitCode=1;});},1500)"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Build Stream.Store Frontend",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"build"
+			],
+			"problemMatcher": [
+				"$eslint - stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Backend Smoke Test",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const http=require('http');const cp=require('child_process');const p=cp.spawn('node',['backend/server.js'],{stdio:'ignore'});setTimeout(()=>{http.get('http://127.0.0.1:5000/api/content',r=>{console.log('Public content API status:',r.statusCode);r.resume();const q=http.request({host:'127.0.0.1',port:5000,path:'/api/content',method:'POST'},x=>{console.log('Unauthenticated create status:',x.statusCode);x.resume();p.kill();});q.end();}).on('error',e=>{console.error(e.message);p.kill();process.exitCode=1;});},1500)"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Package Stream.Store ZIP",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-a",
+				"-c",
+				"-f",
+				"..\\Stream.store_integrated.zip",
+				"--exclude=./node_modules",
+				"--exclude=./backend/node_modules",
+				"--exclude=./dist",
+				"--exclude=./.env.local",
+				"--exclude=./.env",
+				"--exclude=./backend/.env",
+				"--exclude=./backend/uploads/*",
+				"."
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Stream.Store ZIP",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-a",
+				"-c",
+				"-f",
+				"..\\Stream.store_integrated.zip",
+				"--exclude=./node_modules",
+				"--exclude=./backend/node_modules",
+				"--exclude=./dist",
+				"--exclude=./.env.local",
+				"--exclude=./.env",
+				"--exclude=./backend/.env",
+				"--exclude=./backend/uploads/*",
+				"."
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify ZIP Exclusions",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-tf",
+				"..\\Stream.store_integrated.zip"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Verify ZIP Exclusions",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-tf",
+				"..\\Stream.store_integrated.zip"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Build Stream.Store Frontend",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"build"
+			],
+			"problemMatcher": [
+				"$eslint - stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Check Backend Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"backend/server.js"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Package Stream.Store ZIP",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-a",
+				"-c",
+				"-f",
+				"..\\Stream.store_integrated.zip",
+				"--exclude=./node_modules",
+				"--exclude=./backend/node_modules",
+				"--exclude=./dist",
+				"--exclude=./.env.local",
+				"--exclude=./.env",
+				"--exclude=./backend/.env",
+				"--exclude=./backend/uploads/*",
+				"."
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify ZIP Exclusions",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-tf",
+				"..\\Stream.store_integrated.zip"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Verify ZIP Exclusions",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-tf",
+				"..\\Stream.store_integrated.zip"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Place ZIP in Workspace",
+			"type": "shell",
+			"command": "Copy-Item",
+			"args": [
+				"..\\Stream.store_integrated.zip",
+				".\\Stream.store_integrated.zip",
+				"-Force"
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify ZIP Contents",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-tf",
+				"Stream.store_integrated.zip"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Package Stream.Store ZIP",
+			"type": "shell",
+			"command": "tar.exe",
+			"args": [
+				"-a",
+				"-c",
+				"-f",
+				"..\\Stream.store_integrated.zip",
+				"--exclude=./node_modules",
+				"--exclude=./backend/node_modules",
+				"--exclude=./dist",
+				"--exclude=./.env.local",
+				"--exclude=./.env",
+				"--exclude=./backend/.env",
+				"--exclude=./backend/uploads/*",
+				"--exclude=./Stream.store_integrated.zip",
+				"."
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Update Workspace ZIP",
+			"type": "shell",
+			"command": "Copy-Item",
+			"args": [
+				"..\\Stream.store_integrated.zip",
+				".\\Stream.store_integrated.zip",
+				"-Force"
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Install Frontend Dependencies",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install"
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect Port 5000 Owner",
+			"type": "shell",
+			"command": "netstat.exe",
+			"args": [
+				"-ano"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API Process",
+			"type": "shell",
+			"command": "tasklist.exe",
+			"args": [
+				"/FI",
+				"PID eq 7340"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Check API Health",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-i",
+				"http://127.0.0.1:5000/api/health"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Start Stream.Store Frontend",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"serve"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check API Content",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-i",
+				"http://127.0.0.1:5000/api/content"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify Port 5000 Process",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process",
+				"-Filter",
+				"ProcessId = 7340",
+				"|",
+				"Select-Object",
+				"ProcessId,ExecutablePath,CommandLine",
+				"|",
+				"Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Node Server Processes",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process",
+				"-Filter",
+				"Name = 'node.exe'",
+				"|",
+				"Select-Object",
+				"ProcessId,CommandLine",
+				"|",
+				"Format-Table",
+				"-AutoSize"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Node Server Processes",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process",
+				"|",
+				"Where-Object",
+				"{ $_.Name -eq 'node.exe' }",
+				"|",
+				"Select-Object",
+				"ProcessId,CommandLine",
+				"|",
+				"Format-Table",
+				"-AutoSize"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Inspect Node Processes",
+			"type": "shell",
+			"command": "tasklist.exe",
+			"args": [
+				"/FI",
+				"IMAGENAME eq node.exe",
+				"/V"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify Port 5000 Parent",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process",
+				"|",
+				"Where-Object",
+				"{ $_.ProcessId -eq 7340 }",
+				"|",
+				"Select-Object",
+				"ProcessId,ParentProcessId,CommandLine",
+				"|",
+				"Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Node Processes",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Name",
+				"node",
+				"|",
+				"Select-Object",
+				"Id,Path,StartTime",
+				"|",
+				"Format-Table",
+				"-AutoSize"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API Process Owner",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"Win32_Process",
+				"|",
+				"Where-Object",
+				"{ $_.ProcessId -eq 7340 }",
+				"|",
+				"Select-Object",
+				"ProcessId,ParentProcessId,CommandLine",
+				"|",
+				"Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API Process Owner",
+			"type": "shell",
+			"command": "wmic.exe",
+			"args": [
+				"process",
+				"where",
+				"processid=7340",
+				"get",
+				"ProcessId,ParentProcessId,CommandLine",
+				"/format:list"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API Process Owner",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Id",
+				"7340",
+				"|",
+				"Format-List",
+				"*"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API Process Owner",
+			"type": "shell",
+			"command": "Get-WmiObject",
+			"args": [
+				"Win32_Process",
+				"|",
+				"Where-Object",
+				"{ $_.ProcessId -eq 7340 }",
+				"|",
+				"Select-Object",
+				"ProcessId,ParentProcessId,CommandLine",
+				"|",
+				"Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Read Port 5000 API",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-sS",
+				"http://127.0.0.1:5000/api/content"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Existing API Parent",
+			"type": "shell",
+			"command": "Get-CimInstance",
+			"args": [
+				"-ClassName",
+				"Win32_Process",
+				"|",
+				"Where-Object",
+				"{ $_.ProcessId -eq 7340 }",
+				"|",
+				"Select-Object",
+				"-Property",
+				"ProcessId,ParentProcessId,CommandLine",
+				"|",
+				"Out-String"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Existing API Parent",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 7340 } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Existing API Parent",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 7340 } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Stop Stale API Process",
+			"type": "shell",
+			"command": "taskkill.exe",
+			"args": [
+				"/PID",
+				"7340",
+				"/F"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Start Stream.Store API",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"start"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store API",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"start"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store API",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"start",
+				"--prefix",
+				"backend"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store API",
+			"type": "shell",
+			"command": "node.exe",
+			"args": [
+				"backend/server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Inspect Project Folder",
+			"type": "shell",
+			"command": "Get-Location",
+			"args": [],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Backend Start Script",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"start",
+				"--workspace",
+				"backend"
+			],
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store Backend",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store Backend",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"backend/server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Backend Start Helper",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"require('./backend/server.js')"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify API Health",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-i",
+				"http://127.0.0.1:5000/api/health"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Verify Frontend Server",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-I",
+				"http://localhost:8082/"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify Active Port 5000 API",
+			"type": "shell",
+			"command": "tasklist.exe",
+			"args": [
+				"/FI",
+				"PID eq 23108"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API PID",
+			"type": "shell",
+			"command": "netstat.exe",
+			"args": [
+				"-ano"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Identify API PID",
+			"type": "shell",
+			"command": "netstat.exe",
+			"args": [
+				"-ano",
+				"-p",
+				"tcp"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Node Processes",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"-Name",
+				"node",
+				"|",
+				"Select-Object",
+				"Id,StartTime",
+				"|",
+				"Format-Table"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Start Stream.Store Backend",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"start",
+				"--prefix",
+				"C:\\Users\\Administrator\\Desktop\\stream.store_copy\\backend"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Start Stream.Store API",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\Administrator\\Desktop\\stream.store_copy\\backend\\server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Check API Port",
+			"type": "shell",
+			"command": "curl.exe",
+			"args": [
+				"-sS",
+				"-i",
+				"http://127.0.0.1:5000/api/health"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Owning Node Command",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 34560 } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Owning Node Command",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 34560 } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Owning Node Command",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 34560 } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-List"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Find Node Process Details",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' } | Select-Object ProcessId,ParentProcessId,CommandLine | Format-Table -AutoSize"
+			],
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stream.Store Disclaimer. Important legal information about content accuracy, third-party hosting, viewer discretion, and limitation of liability.">
+    <meta name="keywords" content="Stream.Store disclaimer, legal information, Agasobanuye disclaimer, content accuracy, third-party content, liability">
+    <meta name="author" content="Stream.Store">
+    <meta property="og:title" content="Disclaimer | Stream.Store">
+    <meta property="og:description" content="Important Legal Information. Read our full disclaimer about content, liability, and user responsibilities.">
+    <meta property="og:type" content="website">
+    <title>Disclaimer | Stream.Store</title>
+
+    <style>
+        /* ==================== RESET & BASE ==================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6d28d9;
+            --primary-dark: #5b21b6;
+            --primary-light: #8b5cf6;
+            --accent: #f59e0b;
+            --accent-2: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #0f0a1e;
+            --dark-2: #1a1230;
+            --dark-3: #241a3d;
+            --text: #e5e0f0;
+            --text-muted: #a89ec4;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(139, 92, 246, 0.18);
+            --radius: 14px;
+            --radius-sm: 8px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ==================== BACKGROUND GLOW ==================== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 10%, rgba(109, 40, 217, 0.18), transparent 45%),
+                radial-gradient(circle at 80% 30%, rgba(245, 158, 11, 0.08), transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(139, 92, 246, 0.12), transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ==================== UTILITIES ==================== */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 72px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent));
+            border-radius: 4px;
+            margin: 12px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ==================== HEADER / NAV ==================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 10, 30, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo .dot {
+            color: var(--accent);
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-light);
+            border-radius: 2px;
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            text-align: center;
+            padding: 90px 0 60px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--warning);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 8px 18px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 6vw, 3.4rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--warning), var(--danger));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 12px;
+        }
+
+        /* ==================== IMPORTANT BANNER ==================== */
+        .important-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.05));
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-left: 4px solid var(--warning);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .important-banner .icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.08));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .important-banner h2 {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .important-banner p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* ==================== GRIDS ==================== */
+        .grid {
+            display: grid;
+            gap: 22px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        /* ==================== DISCLAIMER CARDS ==================== */
+        .disclaimer-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .disclaimer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .disclaimer-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: var(--shadow);
+        }
+
+        .disclaimer-card:hover::before {
+            opacity: 1;
+        }
+
+        .disclaimer-card .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            border: 1px solid var(--card-border);
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.25), rgba(139, 92, 246, 0.1));
+        }
+
+        .disclaimer-card h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer-card p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .disclaimer-card p + p {
+            margin-top: 10px;
+        }
+
+        /* ==================== WARNING CALLOUT ==================== */
+        .warning-callout {
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-left: 4px solid var(--warning);
+            border-radius: var(--radius-sm);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .warning-callout .icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .warning-callout p {
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        /* ==================== COPYRIGHT BANNER ==================== */
+        .copyright-banner {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(245, 158, 11, 0.04));
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-left: 4px solid var(--danger);
+            border-radius: var(--radius);
+            padding: 32px 36px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .copyright-banner .icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.06));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .copyright-banner h3 {
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .copyright-banner p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== USER RESPONSIBILITIES ==================== */
+        .responsibility-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 28px 26px;
+            transition: var(--transition);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .responsibility-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: var(--shadow);
+        }
+
+        .responsibility-card .number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(109, 40, 217, 0.35);
+        }
+
+        .responsibility-card h3 {
+            color: var(--white);
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .responsibility-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== REPORT SECTION ==================== */
+        .report-box {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.08), rgba(16, 185, 129, 0.04));
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 40px;
+        }
+
+        .report-box > p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 24px;
+            max-width: 820px;
+        }
+
+        .report-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .report-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            transition: var(--transition);
+        }
+
+        .report-list li:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .report-list li::before {
+            content: '!';
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        /* ==================== COMMITMENT ==================== */
+        .commitment-box {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-left: 4px solid var(--accent-2);
+            border-radius: var(--radius-sm);
+            padding: 22px 26px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .commitment-box .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .commitment-box p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .commitment-box strong {
+            color: var(--accent-2);
+        }
+
+        /* ==================== LIABILITY SECTION ==================== */
+        .liability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .liability-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            transition: var(--transition);
+            border-top: 4px solid var(--danger);
+        }
+
+        .liability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .liability-card h3 {
+            color: var(--white);
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .liability-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .liability-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .liability-list li::before {
+            content: '•';
+            color: var(--danger);
+            font-weight: 900;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* ==================== ACKNOWLEDGMENT ==================== */
+        .acknowledgment-box {
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.08), rgba(245, 158, 11, 0.04));
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .acknowledgment-box h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .acknowledgment-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .acknowledgment-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            padding: 18px 22px;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .acknowledgment-list li:hover {
+            border-color: rgba(139, 92, 246, 0.35);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .acknowledgment-list li::before {
+            content: '✓';
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-2);
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        /* ==================== RELATED DOCS ==================== */
+        .related-docs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .related-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 26px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: var(--shadow);
+        }
+
+        .related-card .related-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.25), rgba(139, 92, 246, 0.1));
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .related-card h4 {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .related-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==================== CTA ==================== */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 100px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(109, 40, 217, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(109, 40, 217, 0.5);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, var(--warning), #d97706);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-light);
+            color: var(--white);
+            background: rgba(139, 92, 246, 0.08);
+            transform: translateY(-3px);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .site-footer {
+            background: var(--dark-2);
+            border-top: 1px solid var(--card-border);
+            padding: 64px 0 32px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 14px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-light);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--card-border);
+            padding-top: 28px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ==================== SOCIAL ICONS ==================== */
+        .social-icon {
+            display: inline-flex;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .social-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 52px 0;
+            }
+
+            .important-banner,
+            .copyright-banner {
+                flex-direction: column;
+                gap: 16px;
+                padding: 28px 22px;
+            }
+
+            .report-box,
+            .acknowledgment-box {
+                padding: 28px 22px;
+            }
+
+            .hero {
+                padding: 64px 0 44px;
+            }
+
+            .footer-grid {
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 18px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .disclaimer-card,
+            .liability-card,
+            .responsibility-card {
+                padding: 24px 20px;
+            }
+
+            .responsibility-card {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        /* ==================== ACCESSIBILITY ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="Stream.Store Home">
+                Stream<span class="dot">.</span>Store
+                <span class="logo-badge">Agasobanuye</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/series">Series</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero container">
+            <span class="hero-badge">⚠️ Disclaimer</span>
+            <h1>Important <span class="gradient-text">Legal Information</span></h1>
+            <p class="tagline">
+                Stream.Store provides translated movies and series for free. We are not responsible
+                for the accuracy of translations or third-party content.
+            </p>
+        </section>
+
+        <!-- ==================== IMPORTANT BANNER ==================== -->
+        <section class="section container">
+            <div class="important-banner">
+                <div class="icon" aria-hidden="true">⚠️</div>
+                <div>
+                    <h2>General Disclaimer</h2>
+                    <p>
+                        Stream.Store provides access to translated movies and series for free. We strive
+                        to provide accurate translations, but we cannot guarantee the complete accuracy
+                        or quality of all translations available on our platform.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DISCLAIMER POINTS ==================== -->
+        <section class="section container" aria-labelledby="points-heading">
+            <div class="section-header">
+                <h2 id="points-heading" class="section-title">Key Points of Disclaimer</h2>
+                <p class="section-subtitle">Understanding the scope of our content and services.</p>
+            </div>
+            <div class="grid grid-2">
+                <!-- No Warranties -->
+                <article class="disclaimer-card">
+                    <div class="card-icon" aria-hidden="true">📄</div>
+                    <h3>No Warranties</h3>
+                    <p>
+                        All content is provided <strong>"as is"</strong> without any warranties, express or implied.
+                        We disclaim all warranties including, without limitation, implied warranties of
+                        merchantability and fitness for a particular purpose.
+                    </p>
+                </article>
+
+                <!-- Viewer Discretion -->
+                <article class="disclaimer-card">
+                    <div class="card-icon" aria-hidden="true">👁️</div>
+                    <h3>Viewer Discretion</h3>
+                    <p>
+                        Some content may not be suitable for all audiences. <strong>Viewer discretion is advised.</strong>
+                        Parents and guardians are responsible for monitoring their children's access to content
+                        on our platform.
+                    </p>
+                </article>
+
+                <!-- Technical Issues -->
+                <article class="disclaimer-card">
+                    <div class="card-icon" aria-hidden="true">🔧</div>
+                    <h3>Technical Issues</h3>
+                    <p>
+                        We are not responsible for broken links, server issues, or technical problems with
+                        third-party hosting services. Availability of content is subject to change without notice.
+                    </p>
+                </article>
+
+                <!-- Content Accuracy -->
+                <article class="disclaimer-card">
+                    <div class="card-icon" aria-hidden="true">📝</div>
+                    <h3>Content Accuracy</h3>
+                    <p>
+                        We are not responsible for errors, omissions, or inaccuracies in translations.
+                        Content is provided for educational and entertainment purposes only.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Warning Callout -->
+            <div class="warning-callout" style="margin-top: 24px;">
+                <span class="icon" aria-hidden="true">⚠️</span>
+                <p>We are not responsible for errors, omissions, or inaccuracies in translations.</p>
+            </div>
+        </section>
+
+        <!-- ==================== THIRD-PARTY CONTENT ==================== -->
+        <section class="section container" aria-labelledby="third-party-heading">
+            <div class="section-header">
+                <h2 id="third-party-heading" class="section-title">Third-Party Content</h2>
+            </div>
+            <div class="copyright-banner">
+                <div class="icon" aria-hidden="true">🔗</div>
+                <div>
+                    <h3>Directory Service Notice</h3>
+                    <p>
+                        Stream.Store acts as a <strong>directory service</strong> that links to content hosted on
+                        third-party platforms. We do <strong>not host the actual video files</strong> on our servers.
+                        All trademarks and copyrights belong to their respective owners. Content is provided
+                        for educational and entertainment purposes only.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== USER RESPONSIBILITIES ==================== -->
+        <section class="section container" aria-labelledby="user-resp-heading">
+            <div class="section-header">
+                <h2 id="user-resp-heading" class="section-title">User Responsibilities</h2>
+                <p class="section-subtitle">
+                    As a user of Stream.Store, you acknowledge and agree to the following responsibilities:
+                </p>
+            </div>
+            <div class="grid grid-2">
+                <article class="responsibility-card">
+                    <span class="number" aria-hidden="true">1</span>
+                    <div>
+                        <h3>Content Evaluation</h3>
+                        <p>You are responsible for evaluating the accuracy, completeness, and usefulness of any content available through our platform.</p>
+                    </div>
+                </article>
+                <article class="responsibility-card">
+                    <span class="number" aria-hidden="true">2</span>
+                    <div>
+                        <h3>Legal Compliance</h3>
+                        <p>You must comply with all applicable laws regarding the content you access through our platform.</p>
+                    </div>
+                </article>
+                <article class="responsibility-card">
+                    <span class="number" aria-hidden="true">3</span>
+                    <div>
+                        <h3>Personal Risk</h3>
+                        <p>Your use of any information or materials on Stream.Store is entirely at your own risk.</p>
+                    </div>
+                </article>
+                <article class="responsibility-card">
+                    <span class="number" aria-hidden="true">4</span>
+                    <div>
+                        <h3>System Security</h3>
+                        <p>You are responsible for implementing sufficient procedures to protect your own computer systems from viruses or malware.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== CONTENT REPORTING ==================== -->
+        <section class="section container" aria-labelledby="report-heading">
+            <div class="section-header">
+                <h2 id="report-heading" class="section-title">Content Reporting</h2>
+                <p class="section-subtitle">
+                    Users are encouraged to report inappropriate content for review.
+                </p>
+            </div>
+
+            <div class="report-box">
+                <p>
+                    If you encounter content that you believe violates our policies, copyright laws,
+                    or is inappropriate, please report it immediately.
+                </p>
+
+                <h3 style="color: var(--white); font-size: 1.05rem; font-weight: 700; margin-bottom: 18px;">
+                    What to Report:
+                </h3>
+                <ul class="report-list">
+                    <li>Copyright infringement</li>
+                    <li>Inappropriate or offensive content</li>
+                    <li>Broken or malicious links</li>
+                    <li>Content that violates local laws</li>
+                </ul>
+
+                <div style="text-align: center;">
+                    <a href="/contact" class="btn btn-warning">🚨 Report Now</a>
+                </div>
+            </div>
+
+            <div class="commitment-box" style="margin-top: 24px;">
+                <span class="icon" aria-hidden="true">🤝</span>
+                <p>
+                    <strong>Our Commitment:</strong> We take all reports seriously and will review reported content
+                    promptly. We reserve the right to remove any content that violates our policies or applicable laws.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== LIMITATION OF LIABILITY ==================== -->
+        <section class="section container" aria-labelledby="liability-heading">
+            <div class="section-header">
+                <h2 id="liability-heading" class="section-title">Limitation of Liability</h2>
+                <p class="section-subtitle">No Liability Clause</p>
+            </div>
+
+            <div class="important-banner" style="margin-bottom: 28px;">
+                <div class="icon" aria-hidden="true">⚖️</div>
+                <div>
+                    <h2>No Liability Clause</h2>
+                    <p>
+                        Under no circumstances shall Stream.Store, its affiliates, or their respective directors,
+                        officers, employees, or agents be liable for any direct, indirect, incidental, special,
+                        consequential, or punitive damages resulting from the following:
+                    </p>
+                </div>
+            </div>
+
+            <div class="liability-grid">
+                <!-- Content Related -->
+                <article class="liability-card">
+                    <h3>📺 Content Related</h3>
+                    <ul class="liability-list">
+                        <li>Your use or inability to use our service</li>
+                        <li>Any content obtained through our platform</li>
+                        <li>Translation inaccuracies</li>
+                    </ul>
+                </article>
+
+                <!-- Technical Issues -->
+                <article class="liability-card">
+                    <h3>🔧 Technical Issues</h3>
+                    <ul class="liability-list">
+                        <li>Service interruptions or delays</li>
+                        <li>Viruses or malware from third-party sites</li>
+                        <li>Data loss or corruption</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==================== ACKNOWLEDGMENT ==================== -->
+        <section class="section container" aria-labelledby="acknowledgment-heading">
+            <div class="section-header">
+                <h2 id="acknowledgment-heading" class="section-title">By Using Stream.Store, You Acknowledge That:</h2>
+            </div>
+
+            <div class="acknowledgment-box">
+                <ul class="acknowledgment-list">
+                    <li>You have read and understood this Disclaimer</li>
+                    <li>You accept all risks associated with using our platform</li>
+                    <li>You will report any inappropriate content you encounter</li>
+                    <li>You understand that content is provided for educational and entertainment purposes only</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== RELATED DOCUMENTS ==================== -->
+        <section class="section container" aria-labelledby="related-heading">
+            <div class="section-header">
+                <h2 id="related-heading" class="section-title">Related Documents</h2>
+                <p class="section-subtitle">Explore our other legal and policy pages.</p>
+            </div>
+
+            <div class="related-docs">
+                <a href="/terms" class="related-card">
+                    <div class="related-icon" aria-hidden="true">📋</div>
+                    <h4>Terms &amp; Conditions</h4>
+                    <p>Platform usage agreement and rules</p>
+                </a>
+                <a href="/privacy" class="related-card">
+                    <div class="related-icon" aria-hidden="true">🔒</div>
+                    <h4>Privacy Policy</h4>
+                    <p>How we protect your data</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== CTA ==================== -->
+        <section class="section container cta-section" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">Need Help?</h2>
+            <p>Our support team is ready to assist with any questions about this disclaimer.</p>
+            <div class="btn-group">
+                <a href="/contact" class="btn btn-primary">💬 Contact Support</a>
+                <a href="/" class="btn btn-outline">🏠 Return Home</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo" aria-label="Stream.Store Home">
+                        Stream<span class="dot">.</span>Store
+                    </a>
+                    <p>Thank you for choosing Stream.Store. Enjoy your favorite Agasobanuye films and series online for free!</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms</a></li>
+                        <li><a href="/disclaimer">Disclaimer</a></li>
+                        <li><a href="/how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li>
+                            <a href="https://wa.me/250789358535" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                </span>
+                                WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                </span>
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                </span>
+                                YouTube
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                                </span>
+                                TikTok
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/" target="_blank" rel="noopener noreferrer">
+                                <span class="social-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                                </span>
+                                Telegram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> <span class="highlight">Stream.Store</span>. All rights reserved. Made with ❤️ for Agasobanuye fans.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
